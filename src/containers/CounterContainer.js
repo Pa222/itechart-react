@@ -1,46 +1,81 @@
-import React from 'react'
-import Counter from '../views/Counter/index';
+import React from 'react';
+import PropTypes from 'prop-types';
+import Counter from '../views/Counter/Counter';
 
 class CounterContainer extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            value: 0
+    handleIncrement = () => {
+        this.props.increment(this.props.id);
+    };
+   
+    handleDecrement = () => {
+        this.props.decrement(this.props.id);
+    };
+
+    handleReset = () => {
+        this.props.reset(this.props.id);
+    };
+
+    componentDidMount(){
+        console.log(`Component #${this.props.id + 1}: Did mount`);
+    }
+
+    shouldComponentUpdate(nextProps) {
+        if (this.props.value !== nextProps.value) {
+            console.log(`Component #${this.props.id + 1} should updated`);
+            return true;
+        } else {
+            console.log(`Component #${this.props.id + 1} shouldn't updated`);
+            return false;
         }
-        this.increment = this.increment.bind(this);
-        this.decrement = this.decrement.bind(this);
-        this.reset = this.reset.bind(this);
+    };
+
+    UNSAFE_componentWillReceiveProps(){
+        console.log(`Component #${this.props.id + 1}: Will receive props`);
     }
 
-    increment(){
-        const updated = this.state.value + 1;
-        this.setState({
-            value: updated
-        })
+    componentDidUpdate(){
+        console.log(`Component #${this.props.id + 1}: Did update`);
     }
 
-    decrement(){
-        const updated = this.state.value - 1;
-        this.setState({
-            value: updated
-        })
+    componentWillUnmount(){
+        console.log(`Component #${this.props.id + 1}: Will unmount`);
     }
 
-    reset(){
-        this.setState({
-            value: 0
-        })
-    }
+    // Нельзя использовать совместно с UNSAFE методами
+    // В консоли выдает предупреждение
+    // static getDerivedStateFromProps(props, state) {  
+    //     console.log(props);
+    //     console.log(state);
+    // }
 
-    render(){
-        const props = {
-            value: this.state.value,
-            increment: this.increment,
-            decrement: this.decrement,
-            reset: this.reset
-        };
-        return (<Counter {...props} />);
-    }
+    // Нельзя использовать совместно с UNSAFE методами
+    // В консоли выдает предупреждение
+    // getSnapshotBeforeUpdate(prevProps, prevState){
+    //     console.log(`Component #${this.props.id + 1}: Snapshot before update`);
+    //     return null;
+    // }
+   
+    render() {
+        console.log(`Component #${this.props.id + 1}: Rendered`);
+
+        return (
+            <Counter 
+                    value={this.props.value}
+                    id={this.props.id}
+                    increment={this.handleIncrement} 
+                    decrement={this.handleDecrement} 
+                    reset={this.handleReset}
+            /> 
+        );
+    };
+}
+
+CounterContainer.propTypes = {
+    value: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired,
+    increment: PropTypes.func.isRequired,
+    decrement: PropTypes.func.isRequired,
+    reset: PropTypes.func.isRequired,
 }
 
 export default CounterContainer;

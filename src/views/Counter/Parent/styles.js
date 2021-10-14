@@ -1,11 +1,12 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles({
-    counter: {
+    counterParent: {
         marginBottom: "10px",
-        borderBottom: "1px solid black",
+        paddingBottom: "10px",
+        borderBottom: "1px solid black"
     },
-    counter__button: {
+    counterParent__button: {
         margin: "0 10px 0 10px",
         padding: "10px",
         fontSize: "18px",
@@ -13,10 +14,7 @@ const useStyles = makeStyles({
         border: "1px solid black",
         borderRadius: "5px",
         cursor: "pointer",
-    },
-    counter__text: {
-        fontSize: "28px",
-    },
-});
+    }
+})
 
 export default useStyles;

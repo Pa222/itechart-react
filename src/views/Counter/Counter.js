@@ -9,16 +9,18 @@ const Counter = (props) => {
             <input className={classes.counter__button} type="button" value="increment" onClick={props.increment}></input>
             <input className={classes.counter__button} type="button" value="decrement" onClick={props.decrement}></input>
             <input className={classes.counter__button} type="button" value="reset" onClick={props.reset}></input>
-            <p className={classes.counter__text}>{props.value}</p>
+            <p className={classes.counter__text}>ID: {props.id}</p>
+            <p className={classes.counter__text}>Value: {props.value}</p>
         </div>
     );
 }
 
 Counter.propTypes = {
-    value: PropTypes.number.isRequired,
-    increment: PropTypes.func.isRequired,
-    decrement: PropTypes.func.isRequired,
-    reset: PropTypes.func.isRequired,
+    value: PropTypes.number,
+    id: PropTypes.number,
+    increment: PropTypes.func,
+    decrement: PropTypes.func,
+    reset: PropTypes.func,
 }
 
 export default Counter;
