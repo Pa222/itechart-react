@@ -4,11 +4,15 @@ import Counter from '../views/Counter/index';
 const CounterContainer = () =>{
     const [value, setValue] = useState(0);
 
+    const increment = () => setValue(value + 1);
+    const decrement = () => setValue(value - 1);
+    const reset = () => setValue(0);
+
     const props = {
-                    value: value,
-                    increment: () => { setValue(value + 1); },
-                    decrement: () => { setValue(value - 1); },
-                    reset: () => { setValue(0); }
+                    value,
+                    increment,
+                    decrement,
+                    reset
                 };
     return (<Counter {...props} />);
 }
