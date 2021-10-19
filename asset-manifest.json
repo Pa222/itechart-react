@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/itechart-react/static/js/main.d8b403a9.chunk.js",
-    "main.js.map": "/itechart-react/static/js/main.d8b403a9.chunk.js.map",
+    "main.js": "/itechart-react/static/js/main.e1ceaa8a.chunk.js",
+    "main.js.map": "/itechart-react/static/js/main.e1ceaa8a.chunk.js.map",
     "runtime-main.js": "/itechart-react/static/js/runtime-main.1bdd28e1.js",
     "runtime-main.js.map": "/itechart-react/static/js/runtime-main.1bdd28e1.js.map",
-    "static/js/2.bad22487.chunk.js": "/itechart-react/static/js/2.bad22487.chunk.js",
-    "static/js/2.bad22487.chunk.js.map": "/itechart-react/static/js/2.bad22487.chunk.js.map",
+    "static/js/2.6932865d.chunk.js": "/itechart-react/static/js/2.6932865d.chunk.js",
+    "static/js/2.6932865d.chunk.js.map": "/itechart-react/static/js/2.6932865d.chunk.js.map",
     "index.html": "/itechart-react/index.html",
-    "static/js/2.bad22487.chunk.js.LICENSE.txt": "/itechart-react/static/js/2.bad22487.chunk.js.LICENSE.txt"
+    "static/js/2.6932865d.chunk.js.LICENSE.txt": "/itechart-react/static/js/2.6932865d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.1bdd28e1.js",
-    "static/js/2.bad22487.chunk.js",
-    "static/js/main.d8b403a9.chunk.js"
+    "static/js/2.6932865d.chunk.js",
+    "static/js/main.e1ceaa8a.chunk.js"
   ]
 }
