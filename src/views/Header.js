@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import { Tabs, Tab } from '@mui/material';
 
 const Header = () => {
-    const [selectedTab, setTab] = useState("/about");
+    const href = window.location.href;
+    const path = href.substr(href.indexOf('#/') + 1);
+    const [selectedTab, setTab] = useState(path === '/' ? '/about' : path);
 
     const handleChange = (e, newValue) => {
         setTab(newValue);

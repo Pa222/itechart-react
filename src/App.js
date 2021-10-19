@@ -17,6 +17,7 @@ const App = () => {
                     render={() =>
                         <div>
                             <Header/>
+                            <AboutUs/>
                         </div>
                     }
                 />
