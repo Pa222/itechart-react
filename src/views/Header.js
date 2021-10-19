@@ -13,6 +13,7 @@ const Header = () => {
         <Tabs value={selectedTab} onChange={handleChange} centered>
             <Tab label="About us" value="/about" to="/about" component={Link}></Tab>
             <Tab label="Counters" value="/counters" to="/counters" component={Link}></Tab>
+            <Tab label="Log in" value="/login" to="/login" component={Link}></Tab>
         </Tabs>
     );
 }
