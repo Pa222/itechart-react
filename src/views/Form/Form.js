@@ -10,7 +10,8 @@ const Form = (props) => {
             <div className={classes.form}>
                 <input 
                     className={classes.form__input} 
-                    type="email" name="email" 
+                    type="email" 
+                    name="email" 
                     placeholder="E-mail"
                     onChange={props.handleChange}
                 />
