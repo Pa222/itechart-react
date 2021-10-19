@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import useStyles from './styles';
 
 const Form = (props) => {
@@ -30,6 +31,14 @@ const Form = (props) => {
             <h2>Entered data: {props.formattedData}</h2>
         </form>
     );
+}
+
+Form.propTypes = {
+    email: PropTypes.string,
+    password: PropTypes.string,
+    formattedString: PropTypes.string,
+    handleChange: PropTypes.func,
+    handleSubmit: PropTypes.func,
 }
 
 export default Form;
