@@ -16,6 +16,7 @@ const Header = () => {
             <Tab label="About us" value="/about" to="/about" component={Link}></Tab>
             <Tab label="Counters" value="/counters" to="/counters" component={Link}></Tab>
             <Tab label="Log in" value="/login" to="/login" component={Link}></Tab>
+            <Tab label="Log in with Redux" value="/login-redux" to="/login-redux" component={Link}></Tab>
         </Tabs>
     );
 }

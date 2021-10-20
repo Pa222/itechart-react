@@ -2,8 +2,10 @@ import React from 'react';
 import { HashRouter, Switch, Route } from 'react-router-dom';
 import CounterParentContainer from './containers/CounterParentContainer';
 import FormContainer from './containers/FormContainer';
+import ReduxContainer from './containers/ReduxContainer';
 import AboutUs from './views/AboutUs';
 import Header from './views/Header';
+import SuccessReduxLogin from './views/SuccessReduxLogin';
 import ErrorPage from './views/404';
 
 const App = () => {
@@ -45,6 +47,24 @@ const App = () => {
                         <div>
                             <Header/>
                             <FormContainer/>
+                        </div>
+                    }
+                />
+                <Route 
+                    exact
+                    path='/login-redux'
+                    render={() =>
+                        <div>
+                            <Header/>
+                            <ReduxContainer/>
+                        </div>
+                    }
+                />
+                <Route 
+                    path='/login-redux/success'
+                    render={() =>
+                        <div>
+                            <SuccessReduxLogin/>
                         </div>
                     }
                 />

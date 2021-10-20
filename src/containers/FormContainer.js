@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { validateEmail, validatePassword } from '../Validators';
 import Form from '../views/Form/Form';
 
 const FormContainer = () => {
@@ -15,14 +16,13 @@ const FormContainer = () => {
         setFormattedData(JSON.stringify({email, password, [name]: value}));
     }
 
-    const validate = (pass) => {
-        return pass.length < 6 ? false : true;
-    }
-
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (!validate(password)){
+        if (!validateEmail(email)){
+            alert("Entered email less then 6 symbols");
+            return;
+        } else if (!validatePassword(password)){
             alert("Entered password less then 6 symbols");
             return;
         }
@@ -37,9 +37,11 @@ const FormContainer = () => {
     }
 
     const props = {
-        email,
-        password,
-        formattedData,
+        data: {
+            email,
+            password,
+            formattedData,
+        },
         handleChange,
         handleSubmit,
     }
