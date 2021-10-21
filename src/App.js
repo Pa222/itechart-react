@@ -3,9 +3,10 @@ import { HashRouter, Switch, Route } from 'react-router-dom';
 import CounterParentContainer from './containers/CounterParentContainer';
 import FormContainer from './containers/FormContainer';
 import ReduxContainer from './containers/ReduxContainer';
+import ReduxFormContainer from './containers/ReduxFormContainer';
 import AboutUs from './views/AboutUs';
 import Header from './views/Header';
-import SuccessReduxLogin from './views/SuccessReduxLogin';
+import SuccessLogin from './views/SuccessLogin';
 import ErrorPage from './views/404';
 
 const App = () => {
@@ -64,7 +65,25 @@ const App = () => {
                     path='/login-redux/success'
                     render={() =>
                         <div>
-                            <SuccessReduxLogin/>
+                            <SuccessLogin/>
+                        </div>
+                    }
+                />
+                <Route 
+                    exact
+                    path='/login-redux-form'
+                    render={() =>
+                        <div>
+                            <Header/>
+                            <ReduxFormContainer/>
+                        </div>
+                    }
+                />
+                <Route 
+                    path='/login-redux-form/success'
+                    render={() =>
+                        <div>
+                            <SuccessLogin/>
                         </div>
                     }
                 />

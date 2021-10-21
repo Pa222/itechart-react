@@ -16,11 +16,7 @@ const ReduxContainer = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (!validateEmail(data.email)){
-            alert("Entered email less then 6 symbols or not real email address");
-            return;
-        } else if (!validatePassword(data.password)){
-            alert("Entered password less then 6 symbols");
+        if (!validateEmail(data.email) || !validatePassword(data.password)){
             return;
         }
         

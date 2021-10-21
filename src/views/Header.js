@@ -17,6 +17,7 @@ const Header = () => {
             <Tab label="Counters" value="/counters" to="/counters" component={Link}></Tab>
             <Tab label="Log in" value="/login" to="/login" component={Link}></Tab>
             <Tab label="Log in with Redux" value="/login-redux" to="/login-redux" component={Link}></Tab>
+            <Tab label="Log in with Redux form" value="/login-redux-form" to="/login-redux-form" component={Link}></Tab>
         </Tabs>
     );
 }

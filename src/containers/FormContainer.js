@@ -19,11 +19,7 @@ const FormContainer = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (!validateEmail(email)){
-            alert("Entered email less then 6 symbols");
-            return;
-        } else if (!validatePassword(password)){
-            alert("Entered password less then 6 symbols");
+        if (!validateEmail(email) || !validatePassword(password)){
             return;
         }
 
