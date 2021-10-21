@@ -6,7 +6,6 @@ import { validateEmail, validatePassword } from '../Validators';
 
 const ReduxFormContainer = () => {
     const handleSubmit = (values) => {
-        console.log(values);
         if (!validateEmail(values.email) || !validatePassword(values.password)){
             return;
         }

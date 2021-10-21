@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Form, Field } from 'react-final-form';
 import useStyles from './styles';
 
@@ -31,6 +32,10 @@ const ReduxForm = (props) => {
             )}
         />  
     );
+}
+
+ReduxForm.propTypes = {
+    handleSubmit: PropTypes.func,
 }
 
 export default ReduxForm;

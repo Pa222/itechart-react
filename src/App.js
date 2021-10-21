@@ -62,7 +62,7 @@ const App = () => {
                     }
                 />
                 <Route 
-                    path='/login-redux/success'
+                    path={['/login-redux/success', '/login-redux-form/success']}
                     render={() =>
                         <div>
                             <SuccessLogin/>
@@ -79,14 +79,14 @@ const App = () => {
                         </div>
                     }
                 />
-                <Route 
+                {/* <Route 
                     path='/login-redux-form/success'
                     render={() =>
                         <div>
                             <SuccessLogin/>
                         </div>
                     }
-                />
+                /> */}
                 <Route 
                     render={() =>
                         <ErrorPage/>
