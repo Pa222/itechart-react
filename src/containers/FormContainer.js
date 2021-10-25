@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { validateEmail, validatePassword } from '../Validators';
+import { loginValidationSchema } from '../Validators';
 import Form from '../views/Form/Form';
 
 const FormContainer = () => {
@@ -19,10 +19,6 @@ const FormContainer = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (!validateEmail(email) || !validatePassword(password)){
-            return;
-        }
-
         console.log(`${email}: ${password}`);
 
         setEmail('');
@@ -40,6 +36,7 @@ const FormContainer = () => {
         },
         handleChange,
         handleSubmit,
+        loginValidationSchema,
     }
 
     return(
