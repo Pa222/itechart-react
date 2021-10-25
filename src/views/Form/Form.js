@@ -12,7 +12,7 @@ const Form = (props) => {
                     className={classes.form__input} 
                     type="email" 
                     name="email" 
-                    value={props.data.email}
+                    value={props.email}
                     placeholder="E-mail"
                     onChange={props.handleChange}
                 />
@@ -20,7 +20,7 @@ const Form = (props) => {
                     className={classes.form__input} 
                     type="text" 
                     name="password" 
-                    value={props.data.password}
+                    value={props.password}
                     placeholder="Password"
                     onChange={props.handleChange}
                 />
@@ -30,7 +30,7 @@ const Form = (props) => {
                     value="Log in"
                 />
             </div>
-            <h2>Entered data: {props.data.formattedData}</h2>
+            <h2>Entered data: {props.formattedData}</h2>
         </form>
     );
 }

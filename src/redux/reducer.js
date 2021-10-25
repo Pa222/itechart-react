@@ -5,7 +5,7 @@ const Reducer = (state, action) => {
         state['formattedData'] = JSON.stringify({email: state.email, password: state.password});
     }
 
-    return state;
+    return Object.assign({}, state);
 }
 
 export default Reducer;

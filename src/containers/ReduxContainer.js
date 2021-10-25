@@ -1,37 +1,43 @@
-import React, { useState } from "react";
+import React from "react";
+import { connect } from 'react-redux';
 import { updateState } from '../redux/actions';
 import { validateEmail, validatePassword } from '../Validators';
-import LoginFormStore from '../redux/LoginFormStore';
 import Form from '../views/Form/Form';
 
-const ReduxContainer = () => {
-    const store = LoginFormStore;
-    const [data, setData] = useState(store.getState());
-
-    const handleChange = (e) => {
-        store.dispatch(updateState(e.target.name, e.target.value));
-        setData({...store.getState()});
-    }
-
+const ReduxContainer = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (!validateEmail(data.email) || !validatePassword(data.password)){
+        if (!validateEmail(props.email) || !validatePassword(props.password)){
             return;
         }
         
         window.location.href += '/success'
     }
 
-    const props ={
-        data,
-        handleChange,
+    const formProps ={
+        formattedData: props.formattedData,
+        handleChange: props.handleChange,
         handleSubmit,
     }
 
     return (
-        <Form {...props} />
+        <Form {...formProps} />
     );
 }
 
-export default ReduxContainer;
+const mapStateToProps = (state) => {
+    return{
+        formattedData: state.formattedData,
+        email: state.email,
+        password: state.password,
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        handleChange: (e) => dispatch(updateState(e.target.name, e.target.value)),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ReduxContainer);
