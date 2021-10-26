@@ -2,7 +2,7 @@ import React from 'react';
 import ReduxForm from '../views/ReduxForm/ReduxForm';
 import LoginFormStore from '../redux/LoginFormStore';
 import { updateState } from '../redux/actions';
-import { validateEmail, validatePassword } from '../Validators';
+import { validateEmail, validatePassword} from '../Validators';
 
 const ReduxFormContainer = () => {
     const handleSubmit = (values) => {

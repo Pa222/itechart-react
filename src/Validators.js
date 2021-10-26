@@ -6,8 +6,8 @@ export const loginValidationSchema = Yup.object({
         .matches(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Doesn't look like real emal")
         .required('Required'),
     password: Yup.string()
-        .min(6, 'Too short')
-        .required('Required'),
+    .min(6, 'Too short')
+    .required('Required'),
 })
 
 export const validateEmail = (email) => {
@@ -26,3 +26,4 @@ export const validatePassword = (pass) => {
     alert("Entered password less then 6 symbols");
     return false;
 }
+

@@ -8,6 +8,7 @@ import AboutUs from './views/AboutUs';
 import Header from './views/Header';
 import SuccessLogin from './views/SuccessLogin';
 import ErrorPage from './views/404';
+import ProtectedRoute from './ProtectedRoute';
 
 const App = () => {
     return (
@@ -61,13 +62,9 @@ const App = () => {
                         </div>
                     }
                 />
-                <Route 
+                <ProtectedRoute 
                     path={['/login-redux/success', '/login-redux-form/success']}
-                    render={() =>
-                        <div>
-                            <SuccessLogin/>
-                        </div>
-                    }
+                    component={SuccessLogin}
                 />
                 <Route 
                     exact
@@ -79,14 +76,6 @@ const App = () => {
                         </div>
                     }
                 />
-                {/* <Route 
-                    path='/login-redux-form/success'
-                    render={() =>
-                        <div>
-                            <SuccessLogin/>
-                        </div>
-                    }
-                /> */}
                 <Route 
                     render={() =>
                         <ErrorPage/>

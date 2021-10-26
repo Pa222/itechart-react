@@ -23,6 +23,7 @@ const ReduxForm = (props) => {
                         className={classes.form__input} 
                         name="password" 
                         component="input" 
+                        type="password"
                         placeholder="Password"
                     />
                     <input className={classes.form__input} type="submit" value="Log In"></input>
