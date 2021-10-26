@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import useStyles from './styles';
 import TextInput from './TextInput';
 
-const loginValidationSchema = Yup.object({
+const validationSchema = Yup.object({
     email: Yup.string()
         .min(6, 'Too short')
         .matches(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Doesn't look like real emal")
@@ -21,7 +21,7 @@ const Form = (props) => {
 
     return(
         <Formik 
-            validationSchema={loginValidationSchema}
+            validationSchema={validationSchema}
             initialValues={{
                 email: '',
                 password: '',
