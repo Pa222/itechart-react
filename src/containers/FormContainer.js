@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { loginValidationSchema } from '../Validators';
 import Form from '../views/Form/Form';
 
 const FormContainer = () => {
@@ -30,7 +29,6 @@ const FormContainer = () => {
         formattedData,
         handleChange,
         handleSubmit,
-        loginValidationSchema,
     }
 
     return(

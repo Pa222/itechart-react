@@ -1,8 +1,8 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import { updateState } from '../redux/actions';
-import { loginValidationSchema } from '../Validators';
 import Form from '../views/Form/Form';
 
 const ReduxContainer = (props) => {
@@ -13,7 +13,6 @@ const ReduxContainer = (props) => {
     const formProps ={
         formattedData: props.formattedData,
         handleChange: props.handleChange,
-        loginValidationSchema,
         handleSubmit,
     }
 
@@ -34,6 +33,11 @@ const mapDispatchToProps = (dispatch) => {
     return {
         handleChange: (e) => dispatch(updateState(e.target.name, e.target.value)),
     }
+}
+
+ReduxContainer.propTypes = {
+    formattedData: PropTypes.string,
+    handleChange: PropTypes.func,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReduxContainer);

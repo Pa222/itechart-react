@@ -1,8 +1,19 @@
 import React from 'react';
 import { Formik } from 'formik';
+import * as Yup from 'yup';
 import PropTypes from 'prop-types';
 import useStyles from './styles';
 import TextInput from './TextInput';
+
+const loginValidationSchema = Yup.object({
+    email: Yup.string()
+        .min(6, 'Too short')
+        .matches(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Doesn't look like real emal")
+        .required('Required'),
+    password: Yup.string()
+    .min(6, 'Too short')
+    .required('Required'),
+})
 
 
 const Form = (props) => {
@@ -10,7 +21,7 @@ const Form = (props) => {
 
     return(
         <Formik 
-            validationSchema={props.loginValidationSchema}
+            validationSchema={loginValidationSchema}
             initialValues={{
                 email: '',
                 password: '',
@@ -56,7 +67,9 @@ const Form = (props) => {
 }
 
 Form.propTypes = {
-    data: PropTypes.object,
+    email: PropTypes.string,
+    password: PropTypes.string,
+    formattedData: PropTypes.string,
     handleChange: PropTypes.func,
     handleSubmit: PropTypes.func,
 }
