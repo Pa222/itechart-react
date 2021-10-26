@@ -3,7 +3,8 @@ import Reducer from './reducer';
 
 const defaultState = { 
     email: '',
-    password: '', 
+    password: '',
+    isAuthorized: false,
     formattedData: JSON.stringify({email: '', password: ''}) 
 }
 

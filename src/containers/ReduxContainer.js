@@ -1,15 +1,14 @@
 import React from "react";
 import { connect } from 'react-redux';
+import { useHistory } from "react-router-dom";
 import { updateState } from '../redux/actions';
 import { loginValidationSchema } from '../Validators';
 import Form from '../views/Form/Form';
 
 const ReduxContainer = (props) => {
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const history = useHistory();
 
-        window.location.href += '/success'
-    }
+    const handleSubmit = () => history.push('/login-redux/success');
 
     const formProps ={
         formattedData: props.formattedData,

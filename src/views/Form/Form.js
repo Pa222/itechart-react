@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import useStyles from './styles';
 import TextInput from './TextInput';
 
+
 const Form = (props) => {
     const classes = useStyles();
 
@@ -14,14 +15,15 @@ const Form = (props) => {
                 email: '',
                 password: '',
             }}
+            onSubmit={props.handleSubmit}
             >
-            {({handleChange}) => (
-                <form onSubmit={props.handleSubmit}>
+            {({handleChange, handleSubmit}) => (
+                <form onSubmit={handleSubmit}>
                     <div className={classes.form}>
                         <TextInput 
                             className={classes.form__input} 
                             type="email" 
-                            name="email" 
+                            name="email"
                             value={props.email}
                             placeholder="E-mail"
                             onChange={(e) => {

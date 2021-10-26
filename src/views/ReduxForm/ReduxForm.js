@@ -15,16 +15,16 @@ const ReduxForm = (props) => {
                     <Field 
                         className={classes.form__input} 
                         name="email"
-                        component="input" 
                         type="email"
                         placeholder="E-mail"
+                        component="input" 
                     />
                     <Field 
                         className={classes.form__input} 
                         name="password" 
-                        component="input" 
                         type="password"
                         placeholder="Password"
+                        component="input" 
                     />
                     <input className={classes.form__input} type="submit" value="Log In"></input>
                 </div>

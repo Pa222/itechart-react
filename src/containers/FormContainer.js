@@ -16,24 +16,18 @@ const FormContainer = () => {
         setFormattedData(JSON.stringify({email, password, [name]: value}));
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
+    const handleSubmit = () => {
         console.log(`${email}: ${password}`);
 
         setEmail('');
         setPassword('');
         setFormattedData(JSON.stringify({email: '', password: ''}));
-
-        Array.from(document.querySelectorAll('input')).forEach(input => {input.value = ''});
     }
 
     const props = {
-        data: {
-            email,
-            password,
-            formattedData,
-        },
+        email,
+        password,
+        formattedData,
         handleChange,
         handleSubmit,
         loginValidationSchema,

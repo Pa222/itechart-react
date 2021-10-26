@@ -8,14 +8,11 @@ const ProtectedRoute = ({component: Comp, ...rest}) => {
         <Route 
             {...rest}
             render={props =>{
-                if (state.email !== '' && state.password !== ''){
+                if (state.isAuthorized){
                     return <Comp {...props} />
                 } else{
                     return <Redirect to={{
                         pathname: '/',
-                        state: {
-                            from: props.location,
-                        }
                     }} />
                 }
             }}

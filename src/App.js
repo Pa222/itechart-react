@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import CounterParentContainer from './containers/CounterParentContainer';
 import FormContainer from './containers/FormContainer';
 import ReduxContainer from './containers/ReduxContainer';
@@ -12,78 +12,76 @@ import ProtectedRoute from './ProtectedRoute';
 
 const App = () => {
     return (
-        <HashRouter>
-            <div>
-            <Switch>
-                <Route 
-                    exact
-                    path='/'
-                    render={() =>
-                        <div>
-                            <Header/>
-                            <AboutUs/>
-                        </div>
-                    }
-                />
-                <Route 
-                    path='/about'
-                    render={() =>
-                        <div>
-                            <Header/>
-                            <AboutUs/>
-                        </div>
-                    }
-                />
-                <Route 
-                    path='/counters'
-                    render={() =>
-                        <div>
-                            <Header/>
-                            <CounterParentContainer/>
-                        </div>
-                    }
-                />
-                <Route 
-                    path='/login'
-                    render={() =>
-                        <div>
-                            <Header/>
-                            <FormContainer/>
-                        </div>
-                    }
-                />
-                <Route 
-                    exact
-                    path='/login-redux'
-                    render={() =>
-                        <div>
-                            <Header/>
-                            <ReduxContainer/>
-                        </div>
-                    }
-                />
-                <ProtectedRoute 
-                    path={['/login-redux/success', '/login-redux-form/success']}
-                    component={SuccessLogin}
-                />
-                <Route 
-                    exact
-                    path='/login-redux-form'
-                    render={() =>
-                        <div>
-                            <Header/>
-                            <ReduxFormContainer/>
-                        </div>
-                    }
-                />
-                <Route 
-                    render={() =>
-                        <ErrorPage/>
-                    }
-                /> 
-            </Switch>
-            </div>
-        </HashRouter>
+        <div>
+        <Switch>
+            <Route 
+                exact
+                path='/'
+                render={() =>
+                    <div>
+                        <Header/>
+                        <AboutUs/>
+                    </div>
+                }
+            />
+            <Route 
+                path='/about'
+                render={() =>
+                    <div>
+                        <Header/>
+                        <AboutUs/>
+                    </div>
+                }
+            />
+            <Route 
+                path='/counters'
+                render={() =>
+                    <div>
+                        <Header/>
+                        <CounterParentContainer/>
+                    </div>
+                }
+            />
+            <Route 
+                path='/login'
+                render={() =>
+                    <div>
+                        <Header/>
+                        <FormContainer/>
+                    </div>
+                }
+            />
+            <Route 
+                exact
+                path='/login-redux'
+                render={() =>
+                    <div>
+                        <Header/>
+                        <ReduxContainer/>
+                    </div>
+                }
+            />
+            <Route 
+                exact
+                path='/login-redux-form'
+                render={() =>
+                    <div>
+                        <Header/>
+                        <ReduxFormContainer/>
+                    </div>
+                }
+            />
+            <ProtectedRoute 
+                path={['/login-redux/success', '/login-redux-form/success']}
+                component={SuccessLogin}
+            />
+            <Route 
+                render={() =>
+                    <ErrorPage/>
+                }
+            /> 
+        </Switch>
+        </div>
     );
 }
 
